@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Best of Life</title>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Noto+Serif:700" rel="stylesheet">
+	
+	<!-- jQuery -->
+	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	
+	<!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+</head>
+
+<body>
+
+<!-- Background Video -->
+	<video playsinline autoplay muted loop poster="assets/media/Going-Places.jpg" id="bgvid">
+	    <source src="assets/media/Going-Places.webm" type="video/webm">
+	    <source src="assets/media/Going-Places.mp4" type="video/mp4">
+	</video>
+
+	<br>
+	<div class="container">
+
+		<!-- Dropdown 'Info' button for modal -->
+		<div class="dropdown">
+			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <span class="glyphicon glyphicon-menu-hamburger"></span>
+			    Info
+			    <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			    <li><a href="#" id="instructionsBtn">Instructions</a></li>
+			    <li><a href="#" id="howItWorksBtn">How it works</a></li>
+			    <li><a href="#" id="examplesBtn">What to search for</a></li>
+			  </ul>
+		</div>
+		
+		<!-- Modal -->
+		<div class="modal fade" id="instructionsModal" role="dialog">
+			<div class="modal-dialog">
+			<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Welcome!</h4>
+					</div>
+					<div class="modal-body">
+						<p>Welcome to the Best of Life app. When there are some many options to choose from for what you want it can be difficult to just choose just one.  Best of Life has solved that common problem! Just type in what you are looking for and a location to search within and let statistics make the decision for you. Best of Life searches your topic and uses the best rated option, according to Yelp, and displays it one the map.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="howItWorksModal" role="dialog">
+			<div class="modal-dialog">
+			<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">How does it work?</h4>
+					</div>
+					<div class="modal-body">
+						<p>Best of Life uses the power of Yelp and Google Maps to make your life easier.  It searches for your topic in Yelp's database, sorts the results in the location range by rating, and displays the best rated option on a map provided by Google.  Also, just in case you do not like or cannot go to the best option, Best of Life provides the second best and third best options on the map for your convenience.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="examplesModal" role="dialog">
+			<div class="modal-dialog">
+			<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Don't know what to search for?</h4>
+					</div>
+					<div class="modal-body">
+						<p>Best of Life functions in 4 main categories including restaurants, nightlife, home services, and delivery services (restaurants that deliver).</p>
+						<p>Examples of restaurants are pizza, coffee, Chinese food, sushi, Italian food, etc.</p>
+						<p>Examples of nightlife are sports bars, karaoke bars, dance clubs, etc.</p>
+						<p>Examples of home services are plumbers, electricians, general contractors, home cleaners, etc.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal-dialog to alert user if query yielded no results-->	
+		<div class="modal fade" id="noResults" role="dialog">
+			<div class="modal-dialog">
+			<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">No Results</h4>
+					</div>
+					<div class="modal-body">
+						<p>Sorry, Your Search For <span id="span-searchTerm"></span> In <span id="span-location"></span> Found No Matches.</p>
+						<p>Please Try Another Search Term Or Location.</p>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+				<!-- Modal-dialog to alert user if location yeilded an error-->	
+		<div class="modal fade" id="locationFailed" role="dialog">
+			<div class="modal-dialog">
+			<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">No Results</h4>
+					</div>
+					<div class="modal-body">
+						<p>Sorry, Your Search for <span id="span-locationTerm"></span> Found No Matches.</p>
+						<p>Please Try Another Search Term Or Location.</p>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal-dialog to alert user if either input is empty -->	
+		<div class="modal fade" id="emptyInput" role="dialog">
+			<div class="modal-dialog">
+			<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Whoops! You Missed Something.</h4>
+					</div>
+					<div class="modal-body">
+						<p>Please Enter A <span id="span-input"></span>.</p>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal-dialog to alert user if error with queries -->	
+		<div class="modal fade" id="query-failed" role="dialog">
+			<div class="modal-dialog">
+			<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Whoops! Something Broke.</h4>
+					</div>
+					<div class="modal-body">
+						<p>Sorry There Was An Error With <span id="span-query"></span> API. Please Try Again.</p>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- END .container -->
+	
+	<br>
+	
+	<!-- Page Heading -->
+	<div class="container" id="title">
+		<div class="row">
+			Best of Life
+		</div>
+	</div>	
+	<br>
+
+	<!-- Page User Inputs Form -->
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-4">
+				<label for="search-input">Search Topic:</label>
+				<input class="form-control" placeholder="Enter Topic" id="searchInput" type="text">
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<label for="search-input">Location:</label>
+				<input class="form-control" placeholder="EX: New York, NY" id="locationInput" type="text">
+			</div>
+			<div class="col-xs-12 col-md-3">
+				<label for="distance-input">Distance (in miles):</label>
+				<select class="form-control" id="radius">
+					<option>3</option>
+					<option>5</option>
+					<option>10</option>
+				</select>
+			</div>
+			<div class="col-xs-6 col-md-1">
+				<button class="btn btn-default" id="submitTopic" type="submit">Search</button>
+			</div>
+			<br>
+		</div>
+	</div><!-- END .container -->
+	
+	<!-- Map div -->
+	<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-10 col-md-offset-1">
+					<div id="googleMap"></div>
+				</div>
+			</div>
+	</div><!-- END .container -->
+	<br>
+	<br>
+	
+	<!-- Footer -->
+	<footer id="footerIndex">
+		<div id="connectWithUs"><a href="connect.html">Connect with us!</a></div>
+		<div class="container">
+			@Copyright Doug Aquilino, Ibad Aslam, Bobby Frazette, Kevin Smart-Abbey, &amp; Adam Zamojski
+		</div>
+	</footer>
+	<br>
+
+	<!-- Main Javascript Code -->
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
+	
+	<!-- Google Maps API JS -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDr-DLJtSliHGOsZhoI76ETn6jsk8kVYGo&callback=initMap"></script>
+
+</body>
+</html>

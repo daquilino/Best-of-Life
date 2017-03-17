@@ -1,0 +1,112 @@
+ #googleMap {
+        height: 400px;
+        /*width: 100%;*/
+        display: none;
+       }
+
+video#bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(../media/Going-Places.jpg) no-repeat;
+    background-size: cover; 
+}
+
+#title{
+	font-family: 'Dancing Script', cursive;
+	text-align: center;
+	font-size: 80px;
+	color: #ffffff;
+	text-shadow: 2px 2px #999999;
+}
+
+#connectWithUs, #backToHome{
+    text-align: center;
+    font-family: 'Noto Serif', serif;
+    font-size: 18px;
+}
+
+.name{
+    float: left;
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+}
+
+.linkedin, .github{
+    float: left;
+    padding-bottom: 3px;
+}
+
+body, .infoAddress, #submitTopic, .dropdown, .modal-body{
+	font-family: 'Noto Serif', serif;
+    height: 100%;
+}
+
+.modal-title{
+    font-family: 'Noto Serif', serif;
+    text-align: center;
+}
+
+label{
+	font-family: 'Noto Serif', serif;
+	color: #ffffff;
+}
+
+#modal{
+	color: #ffffff;
+}
+
+#footerIndex{
+    font-family: 'Noto Serif', serif;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 160px;
+}
+
+#footerConnect{
+    font-family: 'Noto Serif', serif;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+}
+
+#submitTopic{
+	margin: 25px 0px 20px 0px;
+}
+
+#locationInput, #searchInput, #distanceInput{
+	margin: 0px 0px 15px 0px;
+}
+
+.infoWindow{
+    text-align: center;
+}
+
+.infoHeading{
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-size: 34px;
+}
+
+.infoName{
+    margin: 0px 0px 10px 0px;
+    font-size: 24px;
+}
