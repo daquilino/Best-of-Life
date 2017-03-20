@@ -43,9 +43,7 @@ Internet connection, web browser.
 * bootstrap 
 
 ## Walk throughs of code
-For Project presentation, you can include snippets of code you found buggy, interesting, or are overall proud of here.  Try to limit the quantity and size to quick readable bits.
 
-You can also show where you've used technologies you've learned and applied here.
 
 /*Yelp search query is sorted by 'rating' in which "The rating sort is not strictly sorted by 
 the rating value, but by an adjusted rating value that takes into account the number of 
@@ -102,7 +100,7 @@ function queryYelp(searchTerm, location, radius)
 ## Authors
 Contributors:
 
-Doug Aquilino, Ibad Aslam, Bobby Frazette, Kevin Smart-Abbey, & Adam Zamojski
+Doug Aquilino, Ibad Aslam, Bobby Frazette, & Adam Zamojski
 
 ## License
 
