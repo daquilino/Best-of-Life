@@ -82,10 +82,7 @@ label{
     font-size: 14px;
     color: #ffffff;
     text-align: center;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    height: 40px;
+    margin-top: 70px;
 }
 
 #submitTopic{

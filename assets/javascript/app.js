@@ -1,4 +1,15 @@
-
+/*==============================================================================
+================================ General =====================================
+================================================================================*/
+	/* The majority of the app.js file consists of two ajax calls that allow the 
+		user to input data from the index.html file and retrieve information from 
+		Yelp results to the page. First, the google geocode is called to retrieve
+		the location that was inputted and then drawn to a google map which gets 
+		displayed. The second ajax call is for the Yelp results which get sorted 
+		by the best rating. The top three results are chosen, three markers
+		are created that are differentiated by color, and placed on the google 
+		map according to the corresponding address.	
+																				*/
 
 /*==============================================================================
 ================================ Variables =====================================
@@ -18,7 +29,10 @@ var markersArray=[];
 ================================ Functions =====================================
 ================================================================================*/
 
-//
+//This is where all the magic happens.  After the document is loaded.  jQuery is used to display
+// the 'welcome' modal.  Keydown event handlers prevent the user from entering unwanted characters
+// as input. Click event handlers monitor if the info dropdown is clicked.  When the user enters 
+// data and clicks 'search' the data is validated then the data is sent to the runGoogleQuery function.
 $(document).ready(function()
 {	
 	//Show 'instructions/welcome' modal when page first loads.
@@ -178,7 +192,6 @@ function queryYelp(searchTerm, location, radius)
     		$("#span-searchTerm").html(searchTerm);  
     		$("#span-location").html(location);
     		$("#noResults").modal();
-  
     		return;
     	}
 	
